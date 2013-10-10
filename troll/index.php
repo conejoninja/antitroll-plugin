@@ -20,8 +20,8 @@ Plugin update URI: troll
     }
 
     function troll_admin_menu() {
-        osc_admin_menu_plugins('Troll plugin', osc_route_admin_url('troll-admin-conf'), 'troll_admin_conf');
-        osc_admin_menu_plugins('Troll list', osc_route_admin_url('troll-admin-list'), 'troll_admin_list');
+        osc_add_admin_submenu_divider('plugins', 'Anti-troll', 'antitroll_divider', 'administrator');
+        osc_add_admin_submenu_page('plugins', __('Manage trolls', 'antitroll'), osc_route_admin_url('troll-admin-list'), 'troll_admin_list', 'administrator');
     }
 
     function troll_init() {
@@ -138,7 +138,6 @@ Plugin update URI: troll
         return (ModelTroll::newInstance()->isTroll(osc_is_web_user_logged_in()?osc_logged_user_id():0, $_SERVER['REMOTE_ADDR'])!==0);
     }
 
-    osc_add_route('troll-admin-conf', 'troll/admin/conf', 'troll/admin/conf', osc_plugin_folder(__FILE__).'admin/conf.php');
     osc_add_route('troll-admin-list', 'troll/admin/list', 'troll/admin/list', osc_plugin_folder(__FILE__).'admin/trolls.php');
 
     osc_register_plugin(osc_plugin_path(__FILE__), 'troll_install');

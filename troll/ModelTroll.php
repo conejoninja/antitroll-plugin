@@ -94,9 +94,22 @@
 
         public function insertValue($id, $value) {
             $t = $this->findByValue($value);
-            if($t===false) {
-                $this->dao->insert($this->getTableName(), array('i_troll_id' => $id, 's_value' => $value));
+            if($id=='') {
+                $this->dao->select('i_troll_id') ;
+                $this->dao->from($this->getTableName());
+                $this->dao->limit(1);
+                $this->dao->orderBy('i_troll_id', 'DESC');
+                $result = $this->dao->get();
+                if(!$result || $result->numRows()==0) {
+                    $id = 1;
+                }
+                $row = $result->row();
+                $id = $row['i_troll_id']+1;
             }
+            if($t===false) {
+                return $this->dao->insert($this->getTableName(), array('i_troll_id' => $id, 's_value' => $value));
+            }
+            return false;
         }
 
         public function findByID($id) {
@@ -223,6 +236,14 @@
             }
 
             return $result->result();
+        }
+
+        function deleteTroll($id) {
+            return $this->dao->delete($this->getTableName(), array('i_troll_id' => $id));
+        }
+
+        function deleteTrollValue($value) {
+            return $this->dao->delete($this->getTableName(), array('s_value' => $value));
         }
     }
 
