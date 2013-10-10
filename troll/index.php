@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Anti-troll plugin
-Plugin URI: http://www.osclass.org/
+Plugin URI: http://www.conejo.me/
 Description: This plugin will troll your trolls and spammers
 Version: 0.0.1
-Author: Osclass
-Author URI: http://www.osclass.org/
+Author: _CONEJO
+Author URI: http://www.conejo.me/
 Plugin update URI: troll
 */
 
