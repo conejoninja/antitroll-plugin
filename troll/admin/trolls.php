@@ -111,7 +111,7 @@ foreach($tmp_trolls as $troll) {
         </div>
         <div class="form-actions">
             <div class="wrapper">
-                <a class="btn" href="javascript:void(0);" onclick="$('#dialog-troll-delete').dialog('close');"><?php _e('Cancel', 'antitroll'); ?></a>
+                <a class="btn" href="javascript:void(0);" onclick="$('#dialog-troll-new').dialog('close');"><?php _e('Cancel', 'antitroll'); ?></a>
                 <input id="troll-delete-submit" type="submit" value="<?php echo osc_esc_html( __('Add', 'antitroll')); ?>" class="btn btn-red" />
             </div>
         </div>
