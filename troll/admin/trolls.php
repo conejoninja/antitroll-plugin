@@ -44,14 +44,12 @@ foreach($tmp_trolls as $troll) {
         $("#dialog-troll-new input[name='troll']").attr('value', '');
         $("#dialog-troll-new input[name='value']").attr('value', '');
         $("#dialog-troll-new").dialog('open');
-        return false;
     }
 
     function add_value(id) {
         $("#dialog-troll-new input[name='troll']").attr('value', id);
         $("#dialog-troll-new input[name='value']").attr('value', '');
         $("#dialog-troll-new").dialog('open');
-        return false;
     }
 
     function delete_troll(id) {
@@ -59,7 +57,6 @@ foreach($tmp_trolls as $troll) {
         $("#dialog-troll-delete input[name='troll']").attr('value', id);
         $("#dialog-troll-delete input[name='value']").attr('value', '');
         $("#dialog-troll-delete").dialog('open');
-        return false;
     }
 
     function delete_value(value) {
@@ -67,7 +64,6 @@ foreach($tmp_trolls as $troll) {
         $("#dialog-troll-delete input[name='troll']").attr('value', '');
         $("#dialog-troll-delete input[name='value']").attr('value', value);
         $("#dialog-troll-delete").dialog('open');
-        return false;
     }
 </script>
 <h2 class="render-title"><?php _e('Trolls', 'antitroll'); ?> <span><a href="javascript:add_troll();" ><?php _e('add new troll', 'antitroll'); ?></a></span></h2>
@@ -115,7 +111,7 @@ foreach($tmp_trolls as $troll) {
         </div>
         <div class="form-actions">
             <div class="wrapper">
-                <a class="btn" href="javascript:void(0);" onclick="$('#dialog-troll-delete').dialog('close');"><?php _e('Cancel', 'antitroll'); ?></a>
+                <a class="btn" href="javascript:void(0);" onclick="$('#dialog-troll-new').dialog('close');"><?php _e('Cancel', 'antitroll'); ?></a>
                 <input id="troll-delete-submit" type="submit" value="<?php echo osc_esc_html( __('Add', 'antitroll')); ?>" class="btn btn-red" />
             </div>
         </div>
