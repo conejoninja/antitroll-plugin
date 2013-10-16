@@ -20,11 +20,13 @@
     }
 
     function troll_access_denied() {
+        require_once LIB_PATH . 'osclass/helpers/hErrors.php';
         header('HTTP/1.1 403 Forbidden');
         osc_die('Access denied', 'Access denied');
     }
 
     function troll_not_found() {
+        require_once LIB_PATH . 'osclass/helpers/hErrors.php';
         header('HTTP/1.1 404 Not Found');
         osc_die('Not Found', 'Not Found');
     }

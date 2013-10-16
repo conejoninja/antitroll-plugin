@@ -83,7 +83,7 @@ foreach($tmp_trolls as $troll) {
     <?php }; ?>
 </ul>
 
-<form id="dialog-troll-delete" method="get" action="<?php echo osc_admin_base_url(true); ?>" class="has-form-actions hide">
+<form id="dialog-troll-delete" method="post" action="<?php echo osc_admin_base_url(true); ?>" class="has-form-actions hide">
     <input type="hidden" name="page" value="plugins" />
     <input type="hidden" name="action" value="renderplugin" />
     <input type="hidden" name="route" value="troll-admin-list" />
@@ -103,7 +103,7 @@ foreach($tmp_trolls as $troll) {
     </div>
 </form>
 
-<form id="dialog-troll-new" method="get" action="<?php echo osc_admin_base_url(true); ?>" class="has-form-actions hide">
+<form id="dialog-troll-new" method="post" action="<?php echo osc_admin_base_url(true); ?>" class="has-form-actions hide">
     <input type="hidden" name="page" value="plugins" />
     <input type="hidden" name="action" value="renderplugin" />
     <input type="hidden" name="route" value="troll-admin-list" />
